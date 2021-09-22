@@ -1,0 +1,43 @@
+  {% extends 'base.html' %} 
+ {% block title %} home contact page {% endblock title %} 
+ {% block css %} 
+ .container 
+ {
+   position:relative;
+   left:100px;
+ }
+ input[type='text']:focus , textarea:focus 
+  {
+   background:lightgreen;
+   border:2px black solid;
+   color:white;
+  }
+ ::selection 
+ {
+   color:white;
+   background:pink;
+ }
+  {% endblock css %}
+ {% block contact %}active {% endblock contact %}
+ {% block body %}
+ <div class="container my-3">
+ <h3>  CONTACT US!</h3>
+ <form action='/cntact/' method='post'>
+ {% csrf_token %}  
+  <lable for='name'> YOUR NAME </lable> <br>
+  <input type='text' id='name' name='name' style=' width:590px' >
+   <br>
+   <br>
+  <lable for='phone'> YOUR PHONE NO. </lable> <br> 
+  <input type='text' id='phone' name='phone' class='my-3'  style=' width:590px'> 
+   <br>
+  <lable for='email'> YOUR EMAIL </lable> <br>
+  <input type='text' id='email' name='email' class='my-3'  style=' width:590px'> 
+  <br>
+   DESCRIBE YOUR ISSUE <br>
+  <textarea name="desc" id="desc" cols="100" rows="10" class='my-3'></textarea>  <br>
+  <input type='submit' class='btn-primary'> 
+  </form>
+  </div>
+  {% endblock body %}
+  

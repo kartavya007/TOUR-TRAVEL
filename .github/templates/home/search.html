@@ -1,0 +1,23 @@
+ {% extends 'base.html' %} 
+ {% block title %} blog home page {% endblock title %} 
+ {% block blog %} active{% endblock blog %}
+ {% block body %} 
+ <h2> SEARCH RESULTS:- </h2> <br>
+ <div class="container">
+ {% if allprod|length < 1 %}
+  <h3> no search found </h3>
+ {% endif %}
+ {% for i in allprod %}
+ <div class="card " style='background:grey;'>
+ <div class="card-body">
+    <h5 class="card-title">{{i.title}}</h5>
+    <p class="card-text">{{i.blog_post}} </p>
+    <a href="/blog/{{i.slug}}/" class="btn btn-success">READ MORE </a>
+  </div> 
+  </div>
+  <br> 
+  <hr>
+  <br>
+  {% endfor %}
+  </div>
+  {% endblock body %}
