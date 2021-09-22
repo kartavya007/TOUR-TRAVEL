@@ -1,0 +1,13 @@
+ {% extends 'base.html' %} 
+ {% block title %} blog post page {% endblock title %} 
+ {% block body %}
+ <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading">{{ allprod.title}} </h2>
+        <p class="lead"> {{allprod.blog_post}}</p>
+      </div>
+      <div class="col-md-5 order-md-1">
+
+      </div>
+    </div>
+    {% endblock body %}
