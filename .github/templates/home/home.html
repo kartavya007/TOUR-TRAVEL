@@ -1,0 +1,26 @@
+ {% extends 'base.html' %} 
+ {% block title %} home page {% endblock title %} 
+ {% block home %} active {% endblock home %}
+ {% block body %} 
+ <div class="px-4 pt-5 my-0 text-center border-bottom bg-danger">
+    <h1 class="display-4 fw-bold">Welcome to my BLOG SITES </h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4"> We post code related blogs every day . Hope you like them </p>
+    </div>
+    <div class="overflow-hidden" style="max-height: 30vh;">
+    </div>
+  </div> 
+  <div class="container ">
+  <h4> OUR MOST POPULAR BLOGS ARE </h4>
+  {% for i in allprod %}
+  <div class="card text-center">
+ <div class="card-body bg-warning ">
+    <h5 class="card-title"> {{i.title }}</h5>
+    <p class="card-text">{{i.blog_post| truncatechars:500  }}</p>
+    <a href="/blog/{{i.slug}}/" class="btn btn-primary">READ MORE</a>
+    
+  </div> 
+  </div>
+  {% endfor %}
+</div>
+  {% endblock body %}
